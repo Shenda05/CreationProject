@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业动态 - 专利桥</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md py-4 px-6 fixed w-full z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://images.unsplash.com/photo-1589149098258-3b71a54060f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="h-10 w-10 rounded-lg">
+                <span class="text-blue-900 font-bold text-2xl">专利桥</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <li><a href="index.html" class="text-gray-400 hover:text-white transition">首页</a></li>
+                <a href="patent-library.html" class="text-blue-900 font-medium hover:text-blue-600 transition">专利库</a>
+                <a href="company-dynamics.html" class="text-blue-900 font-medium hover:text-blue-600 transition">企业动态</a>
+                <a href="achievement-transformation.html" class="text-blue-900 font-medium hover:text-blue-600 transition">成果转化</a>
+                <a href="news-center.html" class="text-blue-900 font-medium hover:text-blue-600 transition">新闻中心</a>
+                <a href="about-us.html" class="text-blue-900 font-medium hover:text-blue-600 transition">关于我们</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/user.svg" alt="User" class="w-4 h-4 mr-2">
+                    登录/注册
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <header class="gradient-bg pt-32 pb-16 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">企业动态</h1>
+            <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">探索创新企业，了解技术需求，促进产业合作与技术转化</p>
+        </div>
+    </header>
+
+    <!-- 搜索区域 -->
+    <section class="py-8 px-6 -mt-10">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-6 max-w-5xl mx-auto">
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex-grow">
+                        <div class="relative">
+                            <input type="text" placeholder="输入企业名称、行业或技术关键词..." class="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="Search" class="w-5 h-5 absolute left-4 top-3.5 text-gray-400">
+                        </div>
+                    </div>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 flex items-center justify-center">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="Search" class="w-5 h-5 mr-2">
+                        搜索
+                    </button>
+                    <button class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition duration-300 flex items-center justify-center">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/sliders.svg" alt="Advanced" class="w-5 h-5 mr-2">
+                        高级筛选
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 高级筛选区域 (默认隐藏) -->
+    <section id="advancedFilter" class="py-4 px-6 hidden">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-6 max-w-5xl mx-auto">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">高级筛选</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 行业领域 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">行业领域</label>
+                        <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">全部行业</option>
+                            <option value="ai">人工智能</option>
+                            <option value="energy">新能源</option>
+                            <option value="medical">生物医药</option>
+                            <option value="manufacturing">智能制造</option>
+                            <option value="blockchain">区块链</option>
+                            <option value="iot">物联网</option>
+                            <option value="electronics">电子信息</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 企业规模 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">企业规模</label>
+                        <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">全部规模</option>
+                            <option value="large">大型企业</option>
+                            <option value="medium">中型企业</option>
+                            <option value="small">小型企业</option>
+                            <option value="micro">微型企业</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 成立时间 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">成立时间</label>
+                        <div class="flex space-x-2">
+                            <input type="date" class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <span class="text-gray-500 flex items-center">至</span>
+                            <input type="date" class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <!-- 注册资本 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">注册资本</label>
+                        <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">全部</option>
+                            <option value="1000-">1000万以下</option>
+                            <option value="1000-5000">1000-5000万</option>
+                            <option value="5000-10000">5000-1亿</option>
+                            <option value="10000+">1亿以上</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 企业类型 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">企业类型</label>
+                        <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">全部类型</option>
+                            <option value="state">国有企业</option>
+                            <option value="private">民营企业</option>
+                            <option value="foreign">外资企业</option>
+                            <option value="joint">合资企业</option>
+                            <option value="listed">上市公司</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 技术需求 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">技术需求</label>
+                        <div class="flex space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">有技术需求</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">有合作意向</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end mt-6 space-x-4">
+                    <button class="border border-gray-300 text-gray-700 hover:bg-gray-100 px-4 py-2 rounded-lg transition duration-300">
+                        重置
+                    </button>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-300">
+                        应用筛选
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行业分类导航 -->
+    <section class="py-8 px-6">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-6">行业领域分类</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/cpu.svg" alt="AI" class="w-8 h-8 text-blue-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">人工智能</h3>
+                            <p class="text-sm text-gray-500">245家企业</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/zap.svg" alt="Energy" class="w-8 h-8 text-green-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">新能源</h3>
+                            <p class="text-sm text-gray-500">187家企业</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/pill.svg" alt="Medicine" class="w-8 h-8 text-red-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">生物医药</h3>
+                            <p class="text-sm text-gray-500">156家企业</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/settings.svg" alt="Manufacturing" class="w-8 h-8 text-orange-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">智能制造</h3>
+                            <p class="text-sm text-gray-500">143家企业</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/database.svg" alt="Blockchain" class="w-8 h-8 text-purple-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">区块链</h3>
+                            <p class="text-sm text-gray-500">87家企业</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/wifi.svg" alt="IoT" class="w-8 h-8 text-blue-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">物联网</h3>
+                            <p class="text-sm text-gray-500">112家企业</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/smartphone.svg" alt="Electronics" class="w-8 h-8 text-indigo-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">电子信息</h3>
+                            <p class="text-sm text-gray-500">176家企业</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/more-horizontal.svg" alt="More" class="w-8 h-8 text-gray-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">更多领域</h3>
+                            <p class="text-sm text-gray-500">探索全部分类</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业列表 -->
+    <section class="py-8 px-6">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">企业列表</h2>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600">排序方式：</span>
+                    <select class="px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="relevance">相关度</option>
+                        <option value="date_desc">成立时间（新到旧）</option>
+                        <option value="date_asc">成立时间（旧到新）</option>
+                        <option value="capital">注册资本</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- 企业卡片列表 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 企业1 -->
+                <a href="company-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Company Logo" class="w-14 h-14 rounded-lg object-cover mr-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">智能科技有限公司</h3>
+                                    <div class="flex items-center mt-1">
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">人工智能</span>
+                                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">大型企业</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Founded" class="w-4 h-4 mr-1">
+                                <span class="text-sm text-gray-500">2015年成立</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/info.svg" alt="Info" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">注册资本：5亿元人民币 | 员工规模：1000-5000人</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">北京市海淀区中关村科技园</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 line-clamp-3">智能科技有限公司是一家专注于人工智能技术研发与应用的高新技术企业，主要从事计算机视觉、自然语言处理、智能机器人等领域的技术创新与产品开发，拥有多项国家发明专利和软件著作权。</p>
+                        
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">技术需求</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">深度学习算法优化</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">边缘计算解决方案</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">智能传感器技术</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 企业2 -->
+                <a href="company-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Company Logo" class="w-14 h-14 rounded-lg object-cover mr-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">新能源科技股份有限公司</h3>
+                                    <div class="flex items-center mt-1">
+                                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">新能源</span>
+                                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">上市公司</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Founded" class="w-4 h-4 mr-1">
+                                <span class="text-sm text-gray-500">2010年成立</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/info.svg" alt="Info" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">注册资本：10亿元人民币 | 员工规模：5000-10000人</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">深圳市南山区高新技术产业园</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 line-clamp-3">新能源科技股份有限公司是国内领先的新能源技术研发与应用企业，主要从事太阳能电池、储能系统、智能电网等领域的研究与产业化，拥有完整的产业链和自主知识产权，产品远销全球多个国家和地区。</p>
+                        
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">技术需求</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">高效率光伏材料</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">大规模储能技术</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">智能微电网控制系统</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 企业3 -->
+                <a href="company-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Company Logo" class="w-14 h-14 rounded-lg object-cover mr-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">生物医药研究院</h3>
+                                    <div class="flex items-center mt-1">
+                                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">生物医药</span>
+                                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">国有企业</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Founded" class="w-4 h-4 mr-1">
+                                <span class="text-sm text-gray-500">2008年成立</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/info.svg" alt="Info" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">注册资本：3亿元人民币 | 员工规模：500-1000人</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">上海市张江高科技园区</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 line-clamp-3">生物医药研究院是一家专注于生物医药领域的研究机构，主要从事新药研发、生物技术应用、医疗器械创新等方向的研究工作，与多家国内外知名高校和研究机构保持紧密合作，拥有一流的研发团队和实验设施。</p>
+                        
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">技术需求</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">靶向药物递送系统</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">基因编辑技术</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">生物材料合成工艺</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 企业4 -->
+                <a href="company-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Company Logo" class="w-14 h-14 rounded-lg object-cover mr-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">智能制造科技集团</h3>
+                                    <div class="flex items-center mt-1">
+                                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">智能制造</span>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">民营企业</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Founded" class="w-4 h-4 mr-1">
+                                <span class="text-sm text-gray-500">2012年成立</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex items-center mb-2">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/info.svg" alt="Info" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">注册资本：2亿元人民币 | 员工规模：1000-2000人</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">广东省东莞市松山湖科技产业园</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 line-clamp-3">智能制造科技集团是一家专注于工业4.0解决方案的高科技企业，主要从事智能工厂建设、工业机器人研发、工业物联网平台搭建等业务，为制造业企业提供全方位的智能化升级服务，助力传统制造业转型升级。</p>
+                        
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">技术需求</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">工业机器人控制系统</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">数字孪生技术</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">工业大数据分析</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- 分页 -->
+            <div class="flex justify-center mt-10">
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg" alt="Previous" class="w-5 h-5">
+                    </a>
+                    <a href="#" class="px-4 py-2 rounded-lg bg-blue-600 text-white">1</a>
+                    <a href="#" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">2</a>
+                    <a href="#" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">3</a>
+                    <span class="px-4 py-2 text-gray-600">...</span>
+                    <a href="#" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">10</a>
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" alt="Next" class="w-5 h-5">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业资质与认证 -->
+    <section class="py-12 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">企业资质与认证</h2>
+            
+            <div class="glass-effect rounded-xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/award.svg" alt="Award" class="w-8 h-8 text-blue-600">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">国家高新技术企业认证</h3>
+                        <p class="text-gray-600">我们严格审核企业的高新技术企业资质，确保技术创新能力和研发投入符合国家标准。</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/check-circle.svg" alt="Verified" class="w-8 h-8 text-green-600">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">企业信用评级</h3>
+                        <p class="text-gray-600">与国家企业信用信息公示系统对接，提供企业信用等级评估，帮助专利持有者评估合作风险。</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/shield.svg" alt="Shield" class="w-8 h-8 text-purple-600">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">知识产权保护能力</h3>
+                        <p class="text-gray-600">评估企业知识产权管理体系和保护措施，确保专利技术在合作过程中得到有效保护。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术需求对接 -->
+    <section class="py-12 px-6">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">技术需求对接</h2>
+                        <p class="text-gray-600 mb-6">专利桥为专利持有者与企业搭建直接沟通的桥梁，帮助双方快速找到合适的合作伙伴，促进技术转化与产业升级。</p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-4 h-4 text-white">
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="font-semibold text-gray-800">精准匹配</h3>
+                                    <p class="text-sm text-gray-600">基于AI算法，精准匹配专利技术与企业需求，提高合作成功率</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-4 h-4 text-white">
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="font-semibold text-gray-800">安全保障</h3>
+                                    <p class="text-sm text-gray-600">提供专业的法律咨询和合同模板，保障双方权益</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-4 h-4 text-white">
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="font-semibold text-gray-800">全程跟踪</h3>
+                                    <p class="text-sm text-gray-600">从需求发布到合作达成，提供全流程跟踪服务</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/link.svg" alt="Connect" class="w-5 h-5 mr-2">
+                            立即对接
+                        </button>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-blue-600 p-8 text-white">
+                        <h3 class="text-xl font-semibold mb-6">热门技术需求</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-medium">智能传感器技术</h4>
+                                    <span class="text-xs bg-blue-500 px-2 py-0.5 rounded">5家企业需求</span>
+                                </div>
+                                <p class="text-sm text-blue-100 mb-2">寻找高精度、低功耗的智能传感器技术，应用于工业物联网和智能家居领域</p>
+                                <div class="flex items-center text-xs text-blue-200">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/clock.svg" alt="Time" class="w-3 h-3 mr-1">
+                                    <span>发布于3天前</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-medium">新型电池材料</h4>
+                                    <span class="text-xs bg-blue-500 px-2 py-0.5 rounded">8家企业需求</span>
+                                </div>
+                                <p class="text-sm text-blue-100 mb-2">寻找高能量密度、长寿命、快充新型电池材料技术，用于新能源汽车和储能系统</p>
+                                <div class="flex items-center text-xs text-blue-200">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/clock.svg" alt="Time" class="w-3 h-3 mr-1">
+                                    <span>发布于1周前</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-medium">生物降解材料</h4>
+                                    <span class="text-xs bg-blue-500 px-2 py-0.5 rounded">3家企业需求</span>
+                                </div>
+                                <p class="text-sm text-blue-100 mb-2">寻找可替代传统塑料的生物降解材料技术，满足环保包装和一次性用品的市场需求</p>
+                                <div class="flex items-center text-xs text-blue-200">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/clock.svg" alt="Time" class="w-3 h-3 mr-1">
+                                    <span>发布于2周前</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="inline-block mt-4 text-blue-100 hover:text-white transition flex items-center">
+                            查看更多技术需求
+                            <img src="https://unpkg.com/lucide-static@latest/icons/arrow-right.svg" alt="Arrow" class="w-4 h-4 ml-1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业详情页预览 -->
+    <section class="py-12 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">企业详情展示</h2>
+            
+            <div class="glass-effect rounded-xl p-6 mb-8">
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="md:w-1/3 mb-6 md:mb-0 md:pr-8">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Company Building" class="w-full h-64 object-cover rounded-lg mb-4">
+                        
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Company Logo" class="w-16 h-16 rounded-lg object-cover mr-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">智能科技有限公司</h3>
+                                <div class="flex items-center mt-1">
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">人工智能</span>
+                                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">大型企业</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Founded" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">成立时间：2015年3月</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/dollar-sign.svg" alt="Capital" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">注册资本：5亿元人民币</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/users.svg" alt="Employees" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">员工规模：1000-5000人</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-4 h-4 mr-2 text-gray-500">
+                                <span class="text-sm text-gray-700">总部地址：北京市海淀区中关村科技园</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/globe.svg" alt="Website" class="w-4 h-4 mr-2 text-gray-500">
+                                <a href="#" class="text-sm text-blue-600 hover:underline">官方网站</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/award.svg" alt="Award" class="w-3 h-3 mr-1">
+                                高新技术企业
+                            </span>
+                            <span class="bg-green-50 text-green-700 text-xs px-2 py-1 rounded flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check-circle.svg" alt="Verified" class="w-3 h-3 mr-1">
+                                信用AAA级
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3">
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/info.svg" alt="Info" class="w-5 h-5 mr-2 text-blue-600">
+                                企业简介
+                            </h3>
+                            <p class="text-gray-600 mb-3">智能科技有限公司是一家专注于人工智能技术研发与应用的高新技术企业，成立于2015年，总部位于北京中关村科技园区。公司主要从事计算机视觉、自然语言处理、智能机器人等领域的技术创新与产品开发，拥有多项国家发明专利和软件著作权。</p>
+                            <p class="text-gray-600">公司拥有一支由海内外顶尖高校博士和行业专家组成的研发团队，与清华大学、北京大学等多所高校建立了产学研合作关系。目前已完成多轮融资，估值超过50亿元人民币，是人工智能领域的独角兽企业。</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/briefcase.svg" alt="Business" class="w-5 h-5 mr-2 text-blue-600">
+                                主营业务
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white rounded-lg p-4 shadow-sm">
+                                    <h4 class="font-medium text-gray-800 mb-2">智能视觉识别系统</h4>
+                                    <p class="text-sm text-gray-600">应用于安防监控、工业质检、自动驾驶等领域，市场占有率国内前三</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 shadow-sm">
+                                    <h4 class="font-medium text-gray-800 mb-2">智能语音交互平台</h4>
+                                    <p class="text-sm text-gray-600">为智能家居、智能客服等场景提供语音识别和语义理解解决方案</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 shadow-sm">
+                                    <h4 class="font-medium text-gray-800 mb-2">AI芯片研发</h4>
+                                    <p class="text-sm text-gray-600">自主研发的边缘计算AI芯片，已在多个行业实现规模化应用</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 shadow-sm">
+                                    <h4 class="font-medium text-gray-800 mb-2">智能机器人系统</h4>
+                                    <p class="text-sm text-gray-600">面向工业、医疗、服务等领域的智能机器人整体解决方案</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="Tech" class="w-5 h-5 mr-2 text-blue-600">
+                                技术需求
+                            </h3>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h4 class="font-medium text-gray-800 mb-2">当前技术需求</h4>
+                                <ul class="space-y-2 mb-4">
+                                    <li class="flex items-start">
+                                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" alt="Arrow" class="w-4 h-4 text-blue-600 mt-1 mr-2">
+                                        <div>
+                                            <p class="text-gray-700 font-medium">深度学习算法优化</p>
+                                            <p class="text-sm text-gray-600">寻找能够显著降低深度学习模型计算复杂度，同时保持或提高精度的算法技术</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" alt="Arrow" class="w-4 h-4 text-blue-600 mt-1 mr-2">
+                                        <div>
+                                            <p class="text-gray-700 font-medium">边缘计算解决方案</p>
+                                            <p class="text-sm text-gray-600">寻求低功耗、高性能的边缘计算技术，实现AI算法在终端设备的高效部署</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" alt="Arrow" class="w-4 h-4 text-blue-600 mt-1 mr-2">
+                                        <div>
+                                            <p class="text-gray-700 font-medium">智能传感器技术</p>
+                                            <p class="text-sm text-gray-600">寻找新型高精度、低功耗的智能传感器技术，用于提升感知系统的性能</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="flex justify-end">
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition duration-300 flex items-center">
+                                        <img src="https://unpkg.com/lucide-static@latest/icons/message-circle.svg" alt="Contact" class="w-4 h-4 mr-1">
+                                        联系洽谈
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="company-detail.html" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300">
+                    查看完整企业详情
+                    <img src="https://unpkg.com/lucide-static@latest/icons/arrow-right.svg" alt="Arrow" class="w-4 h-4 ml-2">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer class="bg-blue-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://images.unsplash.com/photo-1589149098258-3b71a54060f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="h-10 w-10 rounded-lg">
+                        <span class="text-white font-bold text-2xl">专利桥</span>
+                    </div>
+                    <p class="text-blue-200 mb-4">连接创新与产业，促进技术转化与应用</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/facebook.svg" alt="Facebook" class="w-5 h-5">
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/twitter.svg" alt="Twitter" class="w-5 h-5">
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/instagram.svg" alt="Instagram" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white transition">首页</a></li>
+                        <li><a href="patent-library.html" class="text-blue-200 hover:text-white transition">专利库</a></li>
+                        <li><a href="company-dynamics.html" class="text-blue-200 hover:text-white transition">企业动态</a></li>
+                        <li><a href="success-cases.html" class="text-blue-200 hover:text-white transition">成功案例</a></li>
+                        <li><a href="about-us.html" class="text-blue-200 hover:text-white transition">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-5 h-5 mr-2 text-blue-300 flex-shrink-0">
+                            <span class="text-blue-200">北京市海淀区中关村创业大厦5层</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/phone.svg" alt="Phone" class="w-5 h-5 mr-2 text-blue-300 flex-shrink-0">
+                            <span class="text-blue-200">400-123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Email" class="w-5 h-5 mr-2 text-blue-300 flex-shrink-0">
+                            <span class="text-blue-200">contact@patentbridge.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">订阅更新</h3>
+                    <p class="text-blue-200 mb-4">订阅我们的通讯，获取最新的专利信息和企业动态</p>
+                    <form class="flex">
+                        <input type="email" placeholder="您的邮箱地址" class="px-4 py-2 rounded-l-lg focus:outline-none flex-1">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                            订阅
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-300 text-sm mb-4 md:mb-0">© 2023 专利桥. 保留所有权利.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-300 hover:text-white text-sm transition">隐私政策</a>
+                    <a href="#" class="text-blue-300 hover:text-white text-sm transition">使用条款</a>
+                    <a href="#" class="text-blue-300 hover:text-white text-sm transition">法律声明</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-blue-700">
+        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-up.svg" alt="Top" class="w-6 h-6">
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 高级筛选切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtn = document.querySelector('button:has(img[alt="Advanced"])');
+            const filterSection = document.getElementById('advancedFilter');
+            
+            if (filterBtn && filterSection) {
+                filterBtn.addEventListener('click', function() {
+                    filterSection.classList.toggle('hidden');
+                });
+            }
+            
+            // 返回顶部按钮
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 移动端菜单
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+            
+            closeMobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 搜索框展开效果
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        
+        searchButton.addEventListener('click', () => {
+            searchInput.classList.toggle('w-0');
+            searchInput.classList.toggle('w-40');
+            searchInput.classList.toggle('md:w-60');
+            
+            if (!searchInput.classList.contains('w-0')) {
+                searchInput.focus();
+            }
+        });
+        
+        // 移动端菜单
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

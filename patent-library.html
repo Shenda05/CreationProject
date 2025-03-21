@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专利库 - 专利桥</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6, #1e40af);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-10 px-6 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://images.unsplash.com/photo-1589149098258-3b71a54060f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="h-10 w-10 rounded-lg">
+                <span class="text-blue-800 font-bold text-2xl">专利桥</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <li><a href="index.html" class="text-gray-400 hover:text-white transition">首页</a></li>
+                <a href="patent-library.html" class="text-blue-900 font-medium hover:text-blue-600 transition">专利库</a>
+                <a href="company-dynamics.html" class="text-blue-900 font-medium hover:text-blue-600 transition">企业动态</a>
+                <a href="achievement-transformation.html" class="text-blue-900 font-medium hover:text-blue-600 transition">成果转化</a>
+                <a href="news-center.html" class="text-blue-900 font-medium hover:text-blue-600 transition">新闻中心</a>
+                <a href="about-us.html" class="text-blue-900 font-medium hover:text-blue-600 transition">关于我们</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/user.svg" alt="User" class="w-4 h-4 mr-2">
+                    登录/注册
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <header class="gradient-bg pt-32 pb-16 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">专利资源库</h1>
+            <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">探索丰富的专利资源，发现创新技术解决方案，促进产学研深度融合</p>
+        </div>
+    </header>
+
+    <!-- 搜索区域 -->
+    <section class="py-8 px-6 -mt-10">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-6 max-w-5xl mx-auto">
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex-grow">
+                        <div class="relative">
+                            <input type="text" placeholder="输入关键词或专利号搜索..." class="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="Search" class="w-5 h-5 absolute left-4 top-3.5 text-gray-400">
+                        </div>
+                    </div>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 flex items-center justify-center">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="Search" class="w-5 h-5 mr-2">
+                        搜索
+                    </button>
+                    <button class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition duration-300 flex items-center justify-center">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/sliders.svg" alt="Advanced" class="w-5 h-5 mr-2">
+                        高级筛选
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 高级筛选区域 (默认隐藏) -->
+    <section id="advancedFilter" class="py-4 px-6 hidden">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-6 max-w-5xl mx-auto">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">高级筛选</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!--技术领域-->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">技术领域</label>
+                        <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">全部领域</option>
+                            <option value="ai">人工智能</option>
+                            <option value="energy">新能源</option>
+                            <option value="medical">生物医药</option>
+                            <option value="manufacturing">智能制造</option>
+                            <option value="blockchain">区块链</option>
+                            <option value="iot">物联网</option>
+                            <option value="electronics">电子信息</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 申请日期 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">申请日期</label>
+                        <div class="flex space-x-2">
+                            <input type="date" class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <span class="text-gray-500 flex items-center">至</span>
+                            <input type="date" class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <!-- 法律状态 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">法律状态</label>
+                        <select class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">全部状态</option>
+                            <option value="applied">申请中</option>
+                            <option value="published">已公开</option>
+                            <option value="granted">已授权</option>
+                            <option value="expired">已失效</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 专利权人 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">专利权人</label>
+                        <input type="text" placeholder="输入专利权人名称" class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    
+                    <!-- 发明人 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">发明人</label>
+                        <input type="text" placeholder="输入发明人姓名" class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    
+                    <!-- 专利类型 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">专利类型</label>
+                        <div class="flex space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">发明专利</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">实用新型</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">外观设计</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end mt-6 space-x-4">
+                    <button class="border border-gray-300 text-gray-700 hover:bg-gray-100 px-4 py-2 rounded-lg transition duration-300">
+                        重置
+                    </button>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-300">
+                        应用筛选
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专利分类导航 -->
+    <section class="py-8 px-6">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-6">专业领域分类</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/cpu.svg" alt="AI" class="w-8 h-8 text-blue-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">人工智能</h3>
+                            <p class="text-sm text-gray-500">3,245项专利</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/zap.svg" alt="Energy" class="w-8 h-8 text-green-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">新能源</h3>
+                            <p class="text-sm text-gray-500">2,187项专利</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/pill.svg" alt="Medicine" class="w-8 h-8 text-red-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">生物医药</h3>
+                            <p class="text-sm text-gray-500">1,856项专利</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/settings.svg" alt="Manufacturing" class="w-8 h-8 text-orange-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">智能制造</h3>
+                            <p class="text-sm text-gray-500">1,543项专利</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/database.svg" alt="Blockchain" class="w-8 h-8 text-purple-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">区块链</h3>
+                            <p class="text-sm text-gray-500">987项专利</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/globe.svg" alt="IoT" class="w-8 h-8 text-blue-500 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">物联网</h3>
+                            <p class="text-sm text-gray-500">1,245项专利</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/smartphone.svg" alt="Electronics" class="w-8 h-8 text-indigo-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">电子信息</h3>
+                            <p class="text-sm text-gray-500">1,876项专利</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/more-horizontal.svg" alt="More" class="w-8 h-8 text-gray-600 mr-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">更多领域</h3>
+                            <p class="text-sm text-gray-500">探索全部分类</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专利列表 -->
+    <section class="py-8 px-6">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">专利列表</h2>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600">排序方式：</span>
+                    <select class="px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="relevance">相关度</option>
+                        <option value="date_desc">申请日期（新到旧）</option>
+                        <option value="date_asc">申请日期（旧到新）</option>
+                        <option value="citations">引用次数</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- 专利卡片列表 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 专利1 -->
+                <a href="patent-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">人工智能</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">已授权</span>
+                            </div>
+                            <span class="text-sm text-gray-500">申请日期: 2022-05-18</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">基于深度学习的图像识别与分类系统</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">本专利提出一种基于深度学习的图像识别与分类系统，通过改进的卷积神经网络结构，实现了对复杂场景下多目标的高精度识别与分类，识别准确率较传统方法提升30%，处理速度提高50%。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/building.svg" alt="Organization" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">清华大学</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Patent" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">CN202210123456.X</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 专利2 -->
+                <a href="patent-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">新能源</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">已授权</span>
+                            </div>
+                            <span class="text-sm text-gray-500">申请日期: 2021-11-05</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">高效率太阳能电池及其制备方法</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">本专利提出一种新型钙钛矿太阳能电池结构及其制备方法，通过优化材料组成和界面处理，实现了25.8%的光电转换效率，同时显著提高了电池的稳定性和使用寿命。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/building.svg" alt="Organization" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">中国科学院</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Patent" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">CN202110987654.3</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 专利3 -->
+                <a href="patent-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">生物医药</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">实质审查</span>
+                            </div>
+                            <span class="text-sm text-gray-500">申请日期: 2022-09-12</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">靶向递送系统及其在肿瘤治疗中的应用</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">本专利 一种新型纳米载体靶向递送系统，通过特异性识别肿瘤细胞表面受体，实现药物的精准递送，大幅提高治疗效果，同时降低对正常组织的毒副作用。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/building.svg" alt="Organization" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">复旦大学</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Patent" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">CN202220456789.1</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 专利4 -->
+                <a href="patent-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">智能制造</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">已授权</span>
+                            </div>
+                            <span class="text-sm text-gray-500">申请日期: 2021-07-23</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">工业机器人协同控制系统及方法</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">本专利提出一种基于边缘计算的工业机器人协同控制系统及方法，实现了多机器人的实时协作与自适应调整，显著提高了生产线的柔性化程度和生产效率。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/building.svg" alt="Organization" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">哈尔滨工业大学</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Patent" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">CN202110567890.2</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 专利5 -->
+                <a href="patent-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">区块链</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">已公开</span>
+                            </div>
+                            <span class="text-sm text-gray-500">申请日期: 2022-03-08</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">基于区块链的供应链溯源系统</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">本专利提出一种基于区块链技术的供应链溯源系统，通过分布式账本和智能合约，实现了产品全生命周期的可信记录与追溯，有效解决了传统溯源系统中的数据篡改与信任问题。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/building.svg" alt="Organization" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">浙江大学</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Patent" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">CN202220234567.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 专利6 -->
+                <a href="patent-detail.html" class="glass-effect rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">物联网</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">已授权</span>
+                            </div>
+                            <span class="text-sm text-gray-500">申请日期: 2021-12-15</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">低功耗物联网传感器网络及其通信方法</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">本专利提出一种新型低功耗物联网传感器网络架构及其通信方法，通过优化网络拓扑和通信协议，实现了传感器节点超长待机时间和高可靠性数据传输，适用于大规模物联网部署场景。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/building.svg" alt="Organization" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">北京邮电大学</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Patent" class="w-4 h-4 mr-2">
+                                <span class="text-sm text-gray-700">CN202110876543.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- 分页 -->
+            <div class="flex justify-center mt-10">
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg" alt="Previous" class="w-5 h-5">
+                    </a>
+                    <a href="#" class="px-4 py-2 rounded-lg bg-blue-600 text-white">1</a>
+                    <a href="#" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">2</a>
+                    <a href="#" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">3</a>
+                    <span class="px-4 py-2 text-gray-600">...</span>
+                    <a href="#" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">12</a>
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" alt="Next" class="w-5 h-5">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI对话窗口 -->
+    <section class="py-12 px-6">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-8 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">智能专利顾问</h2>
+                    <p class="text-gray-600 mb-6">不确定哪些专利适合您的需求？我们的AI顾问可以帮助您快速找到合适的技术解决方案，解答专利相关问题，并为您推荐最匹配的专利资源。</p>
+                    <div class="flex space-x-4">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/message-circle.svg" alt="Chat" class="w-5 h-5 mr-2">
+                            立即咨询
+                        </button>
+                        <button class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/info.svg" alt="Info" class="w-5 h-5 mr-2">
+                            了解更多
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-4 max-w-md mx-auto">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/bot.svg" alt="AI" class="w-6 h-6 text-white">
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-900">专利顾问</p>
+                                    <p class="text-xs text-green-500">在线</p>
+                                </div>
+                            </div>
+                            <button class="text-gray-400 hover:text-gray-500">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/x.svg" alt="Close" class="w-5 h-5">
+                            </button>
+                        </div>
+                        <div class="space-y-4 mb-4 h-64 overflow-y-auto p-2">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/bot.svg" alt="AI" class="w-5 h-5 text-white">
+                                </div>
+                                <div class="ml-3 bg-blue-50 rounded-lg py-2 px-3 max-w-xs">
+                                    <p class="text-sm text-gray-800">您好！我是专利桥的AI顾问。请问您想查找哪个领域的专利技术？</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-end">
+                                <div class="mr-3 bg-gray-100 rounded-lg py-2 px-3 max-w-xs">
+                                    <p class="text-sm text-gray-800">我想找一些关于太阳能电池的专利</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/user.svg" alt="User" class="w-5 h-5 text-gray-600">
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/bot.svg" alt="AI" class="w-5 h-5 text-white">
+                                </div>
+                                <div class="ml-3 bg-blue-50 rounded-lg py-2 px-3 max-w-xs">
+                                    <p class="text-sm text-gray-800">太阳能电池是新能源领域的热门技术。您是对哪方面更感兴趣？例如：高效率电池、柔性电池、钙钛矿电池或是制备工艺？</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="text" placeholder="输入您的问题..." class="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button class="ml-2 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition duration-300">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/send.svg" alt="Send" class="w-5 h-5">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="gradient-bg text-white pt-16 pb-8 px-6 mt-12">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://images.unsplash.com/photo-1589149098258-3b71a54060f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="h-10 w-10 rounded-lg">
+                        <span class="text-white font-bold text-2xl">专利桥</span>
+                    </div>
+                    <p class="text-blue-100 mb-6">连接创新与应用的桥梁，加速专利技术的市场转化与落地应用</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-200 transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/facebook.svg" alt="Facebook" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200 transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/twitter.svg" alt="Twitter" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200 transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200 transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/instagram.svg" alt="Instagram" class="w-6 h-6">
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-100 hover:text-white transition">首页</a></li>
+                        <li><a href="patent-library.html" class="text-blue-100 hover:text-white transition">专利库</a></li>
+                        <li><a href="company-dynamics.html" class="text-blue-100 hover:text-white transition">企业动态</a></li>
+                        <li><a href="achievement-transformation.html" class="text-blue-100 hover:text-white transition">成果转化</a></li>
+                        <li><a href="news-center.html" class="text-blue-100 hover:text-white transition">新闻中心</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">技术领域</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-blue-100 hover:text-white transition">人工智能</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition">新能源</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition">生物医药</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition">智能制造</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition">区块链</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition">更多领域</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-5 h-5 mr-3 mt-1">
+                            <span class="text-blue-100">北京市海淀区中关村南大街5号</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/phone.svg" alt="Phone" class="w-5 h-5 mr-3">
+                            <span class="text-blue-100">400-123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Email" class="w-5 h-5 mr-3">
+                            <span class="text-blue-100">contact@patentbridge.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-400 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-blue-100 text-sm mb-4 md:mb-0">© 2023 专利桥 版权所有 | 京ICP备12345678号</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-100 hover:text-white transition text-sm">隐私政策</a>
+                        <a href="#" class="text-blue-100 hover:text-white transition text-sm">使用条款</a>
+                        <a href="#" class="text-blue-100 hover:text-white transition text-sm">法律声明</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition duration-300 opacity-0 invisible">
+        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-up.svg" alt="Top" class="w-6 h-6">
+    </button>
+
+    <!-- 移动端菜单按钮 -->
+    <button id="mobileMenuBtn" class="md:hidden fixed top-6 right-6 z-20 bg-blue-600 text-white p-2 rounded-lg">
+        <img src="https://unpkg.com/lucide-static@latest/icons/menu.svg" alt="Menu" class="w-6 h-6">
+    </button>
+
+    <!-- 移动端菜单 (默认隐藏) -->
+    <div id="mobileMenu" class="md:hidden fixed inset-0 bg-blue-900 bg-opacity-95 z-10 transform translate-x-full transition-transform duration-300">
+        <div class="flex flex-col h-full p-6">
+            <div class="flex justify-between items-center mb-10">
+                <div class="flex items-center space-x-2">
+                    <img src="https://images.unsplash.com/photo-1589149098258-3b71a54060f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="h-10 w-10 rounded-lg">
+                    <span class="text-white font-bold text-2xl">专利桥</span>
+                </div>
+                <button id="closeMobileMenu" class="text-white">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/x.svg" alt="Close" class="w-6 h-6">
+                </button>
+            </div>
+            
+            <nav class="flex flex-col space-y-6 text-xl text-white">
+                <a href="index.html" class="hover:text-blue-300 transition">首页</a>
+                <a href="patent-library.html" class="text-blue-300 border-l-4 border-blue-300 pl-3">专利库</a>
+                <a href="#" class="hover:text-blue-300 transition">企业动态</a>
+                <a href="#" class="hover:text-blue-300 transition">成果转化</a>
+                <a href="#" class="hover:text-blue-300 transition">新闻中心</a>
+                <a href="#" class="hover:text-blue-300 transition">关于我们</a>
+            </nav>
+            
+            <div class="mt-auto">
+                <button class="w-full bg-white text-blue-600 px-6 py-3 rounded-lg transition duration-300 flex items-center justify-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/user.svg" alt="User" class="w-5 h-5 mr-2">
+                    登录/注册
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 高级筛选切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtn = document.querySelector('button:has(img[alt="Advanced"])');
+            const filterSection = document.getElementById('advancedFilter');
+            
+            if (filterBtn && filterSection) {
+                filterBtn.addEventListener('click', function() {
+                    filterSection.classList.toggle('hidden');
+                });
+            }
+            
+            // 返回顶部按钮
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 移动端菜单
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+            
+            closeMobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+</body>
+</html>

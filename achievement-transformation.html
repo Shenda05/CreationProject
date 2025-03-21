@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成果转化 - 专利桥</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6, #1e40af);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-10 px-6 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://images.unsplash.com/photo-1589149098258-3b71a54060f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="h-10 w-10 rounded-lg">
+                <span class="text-blue-800 font-bold text-2xl">专利桥</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <li><a href="index.html" class="text-gray-400 hover:text-white transition">首页</a></li>
+                <a href="patent-library.html" class="text-blue-900 font-medium hover:text-blue-600 transition">专利库</a>
+                <a href="company-dynamics.html" class="text-blue-900 font-medium hover:text-blue-600 transition">企业动态</a>
+                <a href="achievement-transformation.html" class="text-blue-900 font-medium hover:text-blue-600 transition">成果转化</a>
+                <a href="news-center.html" class="text-blue-900 font-medium hover:text-blue-600 transition">新闻中心</a>
+                <a href="about-us.html" class="text-blue-900 font-medium hover:text-blue-600 transition">关于我们</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/user.svg" alt="User" class="w-4 h-4 mr-2">
+                    登录/注册
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <header class="gradient-bg pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">专利成果转化平台</h1>
+            <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">连接创新与市场，加速专利技术落地应用，实现产学研深度融合</p>
+        </div>
+    </header>
+
+    <!-- 技术合作模式 -->
+    <section class="py-16 px-6 -mt-10">
+        <div class="container mx-auto">
+            <div class="glass-effect rounded-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">技术合作模式</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4 mx-auto">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/handshake.svg" alt="Cooperation" class="w-8 h-8 text-blue-600">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">技术转让</h3>
+                        <p class="text-gray-600 mb-4">通过专利权转让方式，将专利技术完全转让给企业，由企业独立开发和应用，适合成熟度高、应用场景明确的专利技术。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">一次性获得专利全部权益</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">独立自主开发应用</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">适合核心技术布局</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">了解详情</button>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="License" class="w-8 h-8 text-green-600">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">专利许可</h3>
+                        <p class="text-gray-600 mb-4">通过专利实施许可方式，授权企业在特定范围内使用专利技术，适合多领域应用的专利技术，可实现多方合作共赢。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">灵活的授权范围和期限</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">专利权人保留所有权</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">可设置独占或普通许可</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300">了解详情</button>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-4 mx-auto">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/users.svg" alt="Cooperation" class="w-8 h-8 text-purple-600">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">产学研合作</h3>
+                        <p class="text-gray-600 mb-4">高校、科研院所与企业共同开展技术研发和产业化，优势互补，共担风险，共享收益，适合需要持续研发的技术领域。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">持续的技术支持与升级</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">共同研发新技术</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/check.svg" alt="Check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">人才培养与交流</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition duration-300">了解详情</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 投资对接 -->
+    <section class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">投资对接</h2>
+            
+            <div class="glass-effect rounded-xl p-8 mb-12">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">连接资本与技术</h3>
+                        <p class="text-gray-600 mb-6">专利桥投资对接平台汇聚各类投资机构和产业资本，为有潜力的专利技术提供资金支持，加速技术产业化进程。我们提供专业的项目包装、路演辅导和投资对接服务，帮助专利持有者获得更多发展机会。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/trending-up.svg" alt="Growth" class="w-5 h-5 text-blue-600">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-gray-800">市场估值</h4>
+                                    <p class="text-sm text-gray-600">专业团队对专利技术进行市场价值评估，提供合理估值参考</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/presentation.svg" alt="Presentation" class="w-5 h-5 text-blue-600">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-gray-800">项目路演</h4>
+                                    <p class="text-sm text-gray-600">定期举办专利技术路演活动，面对面对接投资机构</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                    <img src="https://unpkg.com/lucide-static@latest/icons/briefcase.svg" alt="Business" class="w-5 h-5 text-blue-600">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-gray-800">商业计划</h4>
+                                    <p class="text-sm text-gray-600">协助制定专业的商业计划书，提高项目吸引力</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="投资对接" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Investor" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">创新投资基金</h4>
+                            <p class="text-sm text-gray-600">专注于早期科技创新项目</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">重点关注人工智能、新材料、生物医药等领域的专利技术，投资阶段为种子轮至A轮，单笔投资额500万-3000万元。</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">已投项目: 32个</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg text-sm transition duration-300">联系对接</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Investor" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">科技产业投资集团</h4>
+                            <p class="text-sm text-gray-600">产业资本与技术对接平台</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">专注于智能制造、新能源、信息技术等领域的成熟技术，投资阶段为B轮及以后，单笔投资额5000万元以上。</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">已投项目: 47个</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg text-sm transition duration-300">联系对接</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Investor" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">未来科技创投</h4>
+                            <p class="text-sm text-gray-600">专注前沿技术商业化</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">关注量子计算、脑科学、合成生物学等前沿领域的颠覆性技术，投资阶段不限，注重技术壁垒和市场潜力。</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">已投项目: 21个</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg text-sm transition duration-300">联系对接</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 inline-flex items-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Calendar" class="w-5 h-5 mr-2">
+                    预约投资对接会
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例展示 -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">成功案例展示</h2>
+            
+            <!-- 案例轮播 -->
+            <div class="glass-effect rounded-xl p-8 mb-12">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="成功案例" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="md:w-1/2">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">人工智能</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">技术转让</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">智能视觉识别系统落地无人零售行业</h3>
+                        <p class="text-gray-600 mb-6">清华大学计算机系研发的智能视觉识别专利技术，通过专利桥平台与科技公司达成技术转让合作，成功应用于无人零售场景，实现了99.8%的识别准确率，目前已在全国200多家门店部署，为企业带来显著的运营效率提升和成本降低。</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Professor" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800">张教授</h4>
+                                <p class="text-sm text-gray-600">清华大学计算机系 | 专利发明人</p>
+                            </div>
+                        </div>
+                        
+                        <blockquote class="italic text-gray-600 border-l-4 border-blue-500 pl-4 mb-6">
+                            "通过专利桥平台，我们的技术快速找到了合适的产业落地场景，实现了从实验室到市场的转化，这是我们一直期待的结果。"
+                        </blockquote>
+                        
+                        <div class="flex space-x-4">
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Case" class="w-4 h-4 mr-2">
+                                查看完整案例
+                            </button>
+                            <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition duration-300 flex items-center">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/video.svg" alt="Video" class="w-4 h-4 mr-2">
+                                观看案例视频
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <button class="w-3 h-3 rounded-full bg-blue-600 mx-1"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 mx-1"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 mx-1"></button>
+                </div>
+            </div>
+            
+            <!-- 更多案例 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="案例" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">生物医药</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">技术转让</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">新型抗癌药物研发技术成功转化</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">复旦大学医学院研发的靶向药物递送系统专利，通过技术转让方式与制药企业合作，已完成临床试验并获批上市，预计年销售额超过5亿元。</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center text-sm">
+                            查看详情
+                            <img src="https://unpkg.com/lucide-static@latest/icons/arrow-right.svg" alt="Arrow" class="w-4 h-4 ml-1">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1581093458791-9d15482442f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="案例" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">新能源</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">产学研合作</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">高效太阳能电池技术产业化</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">清华大学材料学院研发的高效率太阳能电池技术，通过产学研合作模式与能源企业共同开发，转化效率达28.5%，已建成年产100MW的生产线。</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center text-sm">
+                            查看详情
+                            <img src="https://unpkg.com/lucide-static@latest/icons/arrow-right.svg" alt="Arrow" class="w-4 h-4 ml-1">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112c4e25d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="案例" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">智能制造</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">专利许可</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">工业机器人控制系统许可应用</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">哈尔滨工业大学自动化学院研发的工业机器人精准控制系统，通过专利许可方式与多家制造企业合作，大幅提升了生产效率和产品质量。</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center text-sm">
+                            查看详情
+                            <img src="https://unpkg.com/lucide-static@latest/icons/arrow-right.svg" alt="Arrow" class="w-4 h-4 ml-1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="success-cases.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 inline-flex items-center">
+                    查看更多成功案例
+                    <img src="https://unpkg.com/lucide-static@latest/icons/arrow-right.svg" alt="Arrow" class="w-5 h-5 ml-2">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专利成果转化会议与活动 -->
+    <section class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">专利成果转化会议与活动</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="glass-effect rounded-xl overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="会议" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">
+                            近期活动
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Date" class="w-5 h-5 text-blue-600 mr-2">
+                            <span class="text-gray-700">2023年10月15-17日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">2023全国专利技术转化对接大会</h3>
+                        <p class="text-gray-600 mb-4">本次大会汇聚全国高校、科研院所和企业代表，展示优秀专利成果，促进技术转移转化，推动产学研深度融合。大会设有专利展示区、项目路演、一对一洽谈等环节。</p>
+                        <div class="flex items-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-5 h-5 text-blue-600 mr-2">
+                            <span class="text-gray-700">北京国家会议中心</span>
+                        </div>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/user-plus.svg" alt="Register" class="w-4 h-4 mr-2">
+                            立即报名
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-xl overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="座谈会" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">
+                            成功举办
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Date" class="w-5 h-5 text-blue-600 mr-2">
+                            <span class="text-gray-700">2023年8月25日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">新材料领域专利技术转化座谈会</h3>
+                        <p class="text-gray-600 mb-4">本次座谈会聚焦新材料领域专利技术产业化应用，邀请了行业专家、企业代表和投资机构共同探讨技术转化路径。会上达成多项合作意向，促成3项专利技术成功对接企业。</p>
+                        <div class="flex items-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-5 h-5 text-blue-600 mr-2">
+                            <span class="text-gray-700">上海科技创新中心</span>
+                        </div>
+                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition duration-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Summary" class="w-4 h-4 mr-2">
+                            查看会议纪要
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-effect rounded-xl p-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">专利成果转化成功案例分享会</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Speaker" class="w-10 h-10 rounded-full object-cover mr-3">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">李明</h4>
+                                <p class="text-xs text-gray-600">北京大学教授 | 专利发明人</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">分享了其团队开发的新式半导体材料专利如何通过产学研合作模式成功实现产业化应用，并获得了显著的经济和社会效益。</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Speaker" class="w-10 h-10 rounded-full object-cover mr-3">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">王芳</h4>
+                                <p class="text-xs text-gray-600">科技公司CEO | 专利受让方</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">分享了企业如何通过专利技术转让方式获取核心技术，并基于此开发出具有市场竞争力的产品，实现企业快速发展。</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Speaker" class="w-10 h-10 rounded-full object-cover mr-3">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">张伟</h4>
+                                <p class="text-xs text-gray-600">投资机构合伙人 | 技术投资专家</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">从投资人角度分享了如何评估专利技术的市场价值和投资潜力，以及成功投资专利技术产业化的经验和案例。</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 inline-flex items-center">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/calendar.svg" alt="Calendar" class="w-5 h-5 mr-2">
+                        查看更多活动安排
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务流程 -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">专利成果转化服务流程</h2>
+            
+            <div class="relative">
+                <!-- 流程线 -->
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-blue-200 -translate-y-1/2 z-0"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/clipboard-list.svg" alt="Evaluation" class="w-8 h-8 text-white">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 text-center">需求评估</h3>
+                        <p class="text-sm text-gray-600 text-center">分析专利技术特点和市场应用潜力，确定最佳转化路径</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="Match" class="w-8 h-8 text-white">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 text-center">精准匹配</h3>
+                        <p class="text-sm text-gray-600 text-center">根据技术特点匹配合适的企业或投资机构，提高对接成功率</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/users.svg" alt="Negotiation" class="w-8 h-8 text-white">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 text-center">洽谈对接</h3>
+                        <p class="text-sm text-gray-600 text-center">组织双方深入交流，提供专业咨询，促成合作意向达成</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" alt="Contract" class="w-8 h-8 text-white">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 text-center">合同签署</h3>
+                        <p class="text-sm text-gray-600 text-center">提供专业法律支持，确保合作协议合法有效，保障双方权益</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-4">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/check-circle.svg" alt="Implementation" class="w-8 h-8 text-white">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 text-center">落地实施</h3>
+                        <p class="text-sm text-gray-600 text-center">提供全程跟踪服务，协助解决技术转化过程中的问题</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-gray-600 mb-8 max-w-3xl mx-auto">专利桥平台拥有专业的技术转化团队，为您提供全流程、一站式的专利成果转化服务，让创新更快速地转化为生产力。</p>
+                
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 inline-flex items-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/headphones.svg" alt="Contact" class="w-5 h-5 mr-2">
+                    咨询专业服务
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer class="bg-blue-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://images.unsplash.com/photo-1589149098258-3b71a54060f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo" class="h-10 w-10 rounded-lg">
+                        <span class="text-white font-bold text-2xl">专利桥</span>
+                    </div>
+                    <p class="text-blue-200 mb-4">连接创新与产业，促进技术转化与应用</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/facebook.svg" alt="Facebook" class="w-5 h-5">
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/twitter.svg" alt="Twitter" class="w-5 h-5">
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/instagram.svg" alt="Instagram" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white transition">首页</a></li>
+                        <li><a href="patent-library.html" class="text-blue-200 hover:text-white transition">专利库</a></li>
+                        <li><a href="company-dynamics.html" class="text-blue-200 hover:text-white transition">企业动态</a></li>
+                        <li><a href="achievement-transformation.html" class="text-blue-200 hover:text-white transition">成果转化</a></li>
+                        <li><a href="news-center.html" class="text-blue-200 hover:text-white transition">新闻中心</a></li>
+                        <li><a href="about-us.html" class="text-blue-200 hover:text-white transition">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="w-5 h-5 mr-2 text-blue-300 flex-shrink-0">
+                            <span class="text-blue-200">北京市海淀区中关村创业大厦5层</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/phone.svg" alt="Phone" class="w-5 h-5 mr-2 text-blue-300 flex-shrink-0">
+                            <span class="text-blue-200">400-123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Email" class="w-5 h-5 mr-2 text-blue-300 flex-shrink-0">
+                            <span class="text-blue-200">contact@patentbridge.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">订阅更新</h3>
+                    <p class="text-blue-200 mb-4">订阅我们的通讯，获取最新的专利信息和技术转化动态</p>
+                    <form class="flex">
+                        <input type="email" placeholder="您的邮箱地址" class="px-4 py-2 rounded-l-lg focus:outline-none flex-1">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                            订阅
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-300 text-sm mb-4 md:mb-0">© 2023 专利桥. 保留所有权利.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-300 hover:text-white text-sm transition">隐私政策</a>
+                    <a href="#" class="text-blue-300 hover:text-white text-sm transition">使用条款</a>
+                    <a href="#" class="text-blue-300 hover:text-white text-sm transition">法律声明</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-blue-700">
+        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-up.svg" alt="Top" class="w-6 h-6">
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 轮播图切换
+        const carouselDots = document.querySelectorAll('.flex.justify-center button');
+        if (carouselDots.length > 0) {
+            carouselDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    // 这里可以添加轮播图切换逻辑
+                    carouselDots.forEach(d => d.classList.remove('bg-blue-600'));
+                    carouselDots.forEach(d => d.classList.add('bg-gray-300'));
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-blue-600');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
